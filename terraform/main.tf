@@ -8,8 +8,8 @@ module "apigateway" {
   http_methods         = local.single_workspace ? ["POST"] : ["POST", "GET"]
 
   providers = {
-    aws     = "aws"
-    aws.acm = "aws.acm"
+    aws     = aws
+    aws.acm = aws.acm
   }
 
   tags = var.tags
